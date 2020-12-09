@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="157b87c5-7f2e-434b-ac4e-396563b318f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/class-notes/a20201209-01-date.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/class-notes/a20201209-02-classes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/a20201207-01-form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/a20201207-02-form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/a20201207-03-form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/a20201207-04-form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/a20201207-05-functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class-notes/a20201209-03-xlsx.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +51,7 @@
       <workItem from="1607443683382" duration="2607000" />
       <workItem from="1607480233828" duration="3354000" />
       <workItem from="1607485499320" duration="74000" />
-      <workItem from="1607485604828" duration="235000" />
+      <workItem from="1607485604828" duration="956000" />
     </task>
     <servers />
   </component>
