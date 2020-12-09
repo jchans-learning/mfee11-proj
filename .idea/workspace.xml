@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="157b87c5-7f2e-434b-ac4e-396563b318f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/class-notes/a20201209-03-xlsx.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mfee11-proj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mfee11-proj.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -11,10 +12,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1lEDmPZs91UCi4BbqgIibXUhL2o" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -51,7 +68,8 @@
       <workItem from="1607443683382" duration="2607000" />
       <workItem from="1607480233828" duration="3354000" />
       <workItem from="1607485499320" duration="74000" />
-      <workItem from="1607485604828" duration="956000" />
+      <workItem from="1607485604828" duration="1534000" />
+      <workItem from="1607502592316" duration="517000" />
     </task>
     <servers />
   </component>
