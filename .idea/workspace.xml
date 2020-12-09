@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="157b87c5-7f2e-434b-ac4e-396563b318f9" name="Default Changelist" comment="" />
+    <list default="true" id="157b87c5-7f2e-434b-ac4e-396563b318f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/class-notes/a20201209-01-date.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class-notes/a20201209-02-classes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/a20201207-01-form.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/a20201207-02-form.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/a20201207-03-form.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/a20201207-04-form.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/a20201207-05-functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +20,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1lEDmPZs91UCi4BbqgIibXUhL2o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -20,6 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -39,11 +54,27 @@
       <workItem from="1607161780515" duration="1060000" />
       <workItem from="1607176330148" duration="6916000" />
       <workItem from="1607207961121" duration="3179000" />
-      <workItem from="1607226867090" duration="3314000" />
+      <workItem from="1607226867090" duration="3564000" />
+      <workItem from="1607443683382" duration="2607000" />
+      <workItem from="1607480233828" duration="3354000" />
+      <workItem from="1607485499320" duration="74000" />
+      <workItem from="1607485604828" duration="235000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
