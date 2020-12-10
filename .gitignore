@@ -1,6 +1,10 @@
 # 忽略 info.php 檔案
 info.php
 
+# 忽略 db key
+db_key.php
+
+# 忽略 composer 套件部份檔案
 vendor
 composer.lock
 
