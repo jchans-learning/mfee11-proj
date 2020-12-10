@@ -26,4 +26,4 @@ echo '<br>';
 $b = new MyClass('david');
 echo "$b->name <br>";
 
-$c = new MyClass(''ZhiJie'');
+$c = new MyClass('ZhiJie');
