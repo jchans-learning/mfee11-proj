@@ -21,6 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="157b87c5-7f2e-434b-ac4e-396563b318f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/hello world.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/hello world.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/a20201207-01-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/a20201207-01-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/a20201207-02-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/a20201207-02-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/a20201207-03-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/a20201207-03-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/a20201207-04-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/a20201207-04-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/a20201207-05-functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/a20201207-05-functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/a20201209-01-date.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/a20201209-01-date.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/a20201209-03-xlsx.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/a20201209-03-xlsx.php" afterDir="false" />
+>>>>>>> 39806e07410429dcfc5651df8495934087e0f89d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +39,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+    </include_path>
+  </component>
+>>>>>>> 39806e07410429dcfc5651df8495934087e0f89d
   <component name="ProjectId" id="1lEDmPZs91UCi4BbqgIibXUhL2o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,12 +73,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
+>>>>>>> 39806e07410429dcfc5651df8495934087e0f89d
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
@@ -63,9 +101,18 @@
       <workItem from="1607161780515" duration="1060000" />
       <workItem from="1607176330148" duration="6916000" />
       <workItem from="1607207961121" duration="3179000" />
+<<<<<<< HEAD
       <workItem from="1607226867090" duration="3314000" />
       <workItem from="1607476128168" duration="1290000" />
       <workItem from="1607485311955" duration="634000" />
+=======
+      <workItem from="1607226867090" duration="3564000" />
+      <workItem from="1607443683382" duration="2607000" />
+      <workItem from="1607480233828" duration="3354000" />
+      <workItem from="1607485499320" duration="74000" />
+      <workItem from="1607485604828" duration="1534000" />
+      <workItem from="1607502592316" duration="3178000" />
+>>>>>>> 39806e07410429dcfc5651df8495934087e0f89d
     </task>
     <servers />
   </component>
@@ -84,10 +131,13 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1607485237185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607485237185" />
   </component>
+=======
+>>>>>>> 39806e07410429dcfc5651df8495934087e0f89d
 </project>
