@@ -21,6 +21,12 @@ $row2 = $stmt->fetchAll();
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
+    <style>
+        .remove-icon a i {
+            color: red;
+        }
+    </style>
+
 <div class="container">
 
     <div class="row">
@@ -51,7 +57,7 @@ $row2 = $stmt->fetchAll();
                             <i class="far fa-arrow-alt-circle-right"></i>
                         </a>
                     </li>
-                    <li class="page-item <?= $page==$totalPages ? 'disabled' : '' ?>">
+                    <li class="page-item <?= $page  ==$totalPages ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=<?= $totalPages ?>">
                             <i class="fas fa-arrow-alt-circle-right"></i>
                         </a>
@@ -64,6 +70,7 @@ $row2 = $stmt->fetchAll();
     <table class="table table-striped table-bordered">
         <thead>
         <tr>
+            <th><i class="fas fa-minus-circle"></i></th>
             <th scope="col">sid</th>
             <th scope="col">name</th>
             <th scope="col">email</th>
@@ -89,6 +96,11 @@ $row2 = $stmt->fetchAll();
 
         <?php foreach ($row2 as $item): ?>
         <tr>
+            <td class="remove-icon">
+                <a href="#">
+                    <i class="fas fa-minus-circle"></i>
+                </a>
+            </td>
             <td><?= $item['sid'] ?></td>
             <td><?= $item['name'] ?></td>
             <td><?= $item['email'] ?></td>
