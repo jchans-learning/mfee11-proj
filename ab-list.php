@@ -1,13 +1,19 @@
 <?php
 require __DIR__. '/db_connect.php';
 $pageName = 'ab-list';
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
 $perPage = 5;
 $t_sql = "SELECT COUNT(1) FROM address_book";
 $totalRows = $pdo->query($t_sql)->fetch()['COUNT(1)'];
 $totalPages = ceil($totalRows/$perPage);
 
-$stmt = $pdo->query("SELECT * FROM address_book ORDER BY sid ASC");
+if($page<1) $page = 1;
+if($page>$totalPages) $page=$totalPages;
+
+$p_sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC LIMIT %s, %s", ($page - 1)*$perPage, $perPage);
+
+$stmt = $pdo->query($p_sql);
 // $row = $stmt->fetch();
 $row2 = $stmt->fetchAll();
 ?>
@@ -21,15 +27,35 @@ $row2 = $stmt->fetchAll();
         <div class="col">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-arrow-alt-circle-left"></i></a></li>
-                    <li class="page-item"><a class="page-link" href="#"> <i class="far fa-arrow-alt-circle-left"></i></a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1">
+                            <i class="fas fa-arrow-alt-circle-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<?= $page-1 ?>">
+                            <i class="far fa-arrow-alt-circle-left"></i>
+                        </a>
+                    </li>
 
                     <?php for ($i=1; $i<=$totalPages; $i++): ?>
-                    <li class="page-item"><a class="page-link" href="#"><?= $i ?></a></li>
+                    <li class="page-item <?= $page==$i ? 'active' : '' ?>">
+                        <a class="page-link" href="?page=<?= $i ?>">
+                            <?= $i ?>
+                        </a>
+                    </li>
                     <?php endfor ?>
 
-                    <li class="page-item"><a class="page-link" href="#"><i class="far fa-arrow-alt-circle-right"></i></a></li>
-                    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-arrow-alt-circle-right"></i></a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<?= $page+1 ?>">
+                            <i class="far fa-arrow-alt-circle-right"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<?= $totalPages ?>">
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
