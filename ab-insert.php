@@ -3,7 +3,7 @@ if (! isset($_SESSION)){
     session_start();
 }
 
-$title = '登入';
+$pageName = '新增通訊錄';
 
 if (isset($_POST['account']) and isset($_POST['password'])) {
     if($_POST['account']==='shin' and $_POST['password']==='1234'){

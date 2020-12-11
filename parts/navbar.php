@@ -21,6 +21,9 @@ if(!isset($pageName)) $pageName = '';
             <li class="nav-item <?= $pageName=='ab-list' ? active : '' ?>">
                 <a class="nav-link" href="<?= WEB_ROOT ?>ab-list.php">通訊錄列表</a>
             </li>
+            <li class="nav-item <?= $pageName=='ab-insert' ? active : '' ?>">
+                <a class="nav-link" href="<?= WEB_ROOT ?>ab-insert.php">新增通訊錄</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
