@@ -27,12 +27,12 @@ $row2 = $stmt->fetchAll();
         <div class="col">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <li class="page-item">
+                    <li class="page-item <?= $page==1 ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=1">
                             <i class="fas fa-arrow-alt-circle-left"></i>
                         </a>
                     </li>
-                    <li class="page-item">
+                    <li class="page-item <?= $page==1 ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=<?= $page-1 ?>">
                             <i class="far fa-arrow-alt-circle-left"></i>
                         </a>
@@ -46,12 +46,12 @@ $row2 = $stmt->fetchAll();
                     </li>
                     <?php endfor ?>
 
-                    <li class="page-item">
+                    <li class="page-item <?= $page==$totalPages ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=<?= $page+1 ?>">
                             <i class="far fa-arrow-alt-circle-right"></i>
                         </a>
                     </li>
-                    <li class="page-item">
+                    <li class="page-item <?= $page==$totalPages ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=<?= $totalPages ?>">
                             <i class="fas fa-arrow-alt-circle-right"></i>
                         </a>
