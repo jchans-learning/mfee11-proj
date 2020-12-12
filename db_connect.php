@@ -1,4 +1,13 @@
 <?php
+
+// 以下註解掉的部分存在另一個檔案裡
+/*
+$db_host = 'localhost';
+$db_name = 'mfee11c';  // 資料庫名稱
+$db_user = '存放在另一個檔案另一個檔案裡';
+$db_pass = '存放在另一個檔案另一個檔案裡';
+ */
+
 include 'db_key.php';
 
 $dsn = "mysql:host={$db_host};dbname={$db_name};charset=utf8";
