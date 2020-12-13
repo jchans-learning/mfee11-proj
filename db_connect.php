@@ -4,8 +4,8 @@
 /*
 $db_host = 'localhost';
 $db_name = 'mfee11c';  // 資料庫名稱
-$db_user = '存放在另一個檔案另一個檔案裡';
-$db_pass = '存放在另一個檔案另一個檔案裡';
+$db_user = 'root'; // 資料庫要設定別的帳號
+$db_pass = '';
  */
 
 include 'db_key.php';
