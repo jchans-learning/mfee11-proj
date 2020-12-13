@@ -22,11 +22,14 @@
 
         // fetch() 的使用
         // 參考： https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        //
         fetch('a20201207-03-form.php', {
             method: 'POST', 
             body: fd
         })
         // fetch 回來的東西不是真的 JSON 物件，所以用 json() 方法把資料轉換為 JSON
+        // JSON 參考： https://zh.wikipedia.org/wiki/JSON
+        //
         .then(function (r) { return r.json()})
         .then(obj=>{
             console.log(obj);
