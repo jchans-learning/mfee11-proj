@@ -101,7 +101,7 @@ $row2 = $stmt->fetchAll();
             <?php foreach ($row2 as $item) : ?>
                 <tr>
                     <td class="remove-icon">
-                        <a href="#">
+                        <a href="javascript:" onclick="removeItem(event)">
                             <i class="fas fa-minus-circle"></i>
                         </a>
                     </td>
@@ -110,7 +110,7 @@ $row2 = $stmt->fetchAll();
                     <td><?= $item['email'] ?></td>
                     <td><?= $item['mobile'] ?></td>
                     <td><?= $item['birthday'] ?></td>
-                    <td><?= $item['address'] ?></td>
+                    <td><?= htmlentities($r['address']) ?></td>
                 </tr>
             <?php endforeach; ?>
 
@@ -119,4 +119,10 @@ $row2 = $stmt->fetchAll();
 
 </div>
 <?php include __DIR__ . '/parts/scripts.php'; ?>
+<script>
+    function removeItem(event) {
+        const t = event.target;
+        t.closest('tr').remove();
+    }
+</script>
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
