@@ -1,8 +1,8 @@
 <?php
-require __DIR__ . 'db-connect.php';
+require __DIR__ . '/db-connect.php';
 
 $output = [
-    'success' = false,
+    'success' => false,
     'code' => 0,
     'error' => '參數不足',
 ];
@@ -20,3 +20,20 @@ $sql = "INSERT INTO `address_book`(
     ?, ?, ?, ?, ?, NOW()
 )
 ";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    $_POST['name'],
+    $_POST['email'],
+    $_POST['mobile'],
+    empty($_POST['birthday']) ? NULL : $_POST['birthday'],
+    $_POST['address'],
+]);
+
+$output['rowCount'] = $stmt->rowCount();
+if ($stmt->rowCount()) {
+    $output['success'] = True;
+    unset($output['error']);
+}
+
+echo json_encode($output, JSON_UNESCAPED_UNICODE);

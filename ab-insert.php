@@ -99,7 +99,7 @@ $pageName = 'ab-insert';
         }
 
         if (isPass) {
-            const fd = new FormData(documant.forms[0]);
+            const fd = new FormData(document.forms[0]);
 
             fetch('ab-insert-api.php', {
                     method: 'POST',

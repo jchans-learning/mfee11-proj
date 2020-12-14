@@ -1,5 +1,5 @@
 <?php
-if(!isset($pageName)) $pageName = '';
+if (!isset($pageName)) $pageName = '';
 ?>
 
 
@@ -18,10 +18,10 @@ if(!isset($pageName)) $pageName = '';
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item <?= $pageName=='ab-list' ? active : '' ?>">
+            <li class="nav-item <?= $pageName == 'ab-list' ? active : '' ?>">
                 <a class="nav-link" href="<?= WEB_ROOT ?>ab-list.php">通訊錄列表</a>
             </li>
-            <li class="nav-item <?= $pageName=='ab-insert' ? active : '' ?>">
+            <li class="nav-item <?= $pageName == 'ab-insert' ? active : '' ?>">
                 <a class="nav-link" href="<?= WEB_ROOT ?>ab-insert.php">新增通訊錄</a>
             </li>
             <li class="nav-item dropdown">
@@ -39,9 +39,5 @@ if(!isset($pageName)) $pageName = '';
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 </nav>
