@@ -4,15 +4,6 @@ if (!isset($_SESSION)) {
 }
 
 $pageName = 'ab-insert';
-
-if (isset($_POST['account']) and isset($_POST['password'])) {
-    if ($_POST['account'] === 'shin' and $_POST['password'] === '1234') {
-        // 可以登入
-        $_SESSION['admin'] = 'shin';
-    } else {
-        $errorMsg = '帳號或密碼錯誤';
-    }
-}
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -38,11 +29,11 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
                         </div>
                         <div class="form-group">
                             <label for="name">name</label>
-                            <input type="text" class="form-control" id="name" name="name">
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">email</label>
-                            <input type="text" class="form-control" id="email" name="email">
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="mobile">mobile</label>
@@ -50,13 +41,22 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
                         </div>
                         <div class="form-group">
                             <label for="birthday">birthday</label>
-                            <input type="text" class="form-control" id="birthday" name="birthday">
+                            <input type="date" class="form-control" id="birthday" name="birthday">
                         </div>
+
+                        <!--                        
+                        <div class="form-group">
+                            <label for="number">number</label>
+                            <input type="number" class="form-control" id="number" name="number">
+                        </div>
+                        -->
+
                         <div class="form-group">
                             <label for="address">address</label>
-                            <input type="text" class="form-control" id="address" name="address">
+                            <textarea class="form-control" name="address" id="address" cols="30" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="text">
                     </form>
 
                 </div>
