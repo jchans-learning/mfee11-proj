@@ -76,22 +76,39 @@ $pageName = 'ab-insert';
     const email_re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
     function checkForm() {
+        let isPass = true;
+
         name.style.borderColor = '#CCCCCC';
         name.closest('.form-group').querySelector('small').style.display = 'none';
         email.style.borderColor = '#CCCCCC';
         email.closest('.form-group').querySelector('small').style.display = 'none';
 
         if (name.value.length < 2) {
+            isPass = false;
             name.style.borderColor = 'red';
             let small = name.closest('.form-group').querySelector('small')
             small.innerText = "請輸入正確的名字！";
             small.style.display = 'block';
         }
         if (!email_re.test(email.value)) {
+            isPass = false;
             email.style.borderColor = 'red';
             let small = email.closest('.form-group').querySelector('small');
             small.innerText = "請輸入正確的 email ！";
             small.style.display = 'block';
+        }
+
+        if (isPass) {
+            const fd = new FormData(documant.forms[0]);
+
+            fetch('ab-insert-api.php', {
+                    method: 'POST',
+                    body: fd
+                })
+                .then(r => r.json)
+                .then(obj => {
+                    console.log(obj);
+                })
         }
     }
 </script>
