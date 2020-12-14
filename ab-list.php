@@ -101,7 +101,7 @@ $row2 = $stmt->fetchAll();
             <?php foreach ($row2 as $item) : ?>
                 <tr>
                     <td class="remove-icon">
-                        <a href="javascript:" onclick="removeItem(event)">
+                        <a href="ab-delete.php?sid=<?= $item['sid'] ?>">
                             <i class="fas fa-minus-circle"></i>
                         </a>
                     </td>
