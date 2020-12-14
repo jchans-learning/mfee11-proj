@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/db-connect.php';
+require __DIR__ . '/db_connect.php';
 
 $output = [
     'success' => false,
