@@ -18,17 +18,17 @@ $pageName = 'ab-insert';
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-lg-6">
-            <?php if (isset($errorMsg)) : ?>
-                <div class="alert alert-danger" role="alert">
-                    <?= $errorMsg ?>
-                </div>
-            <?php endif ?>
+
+
+            <div class="alert alert-danger" role="alert" id="info" style="display: none">錯誤</div>
+
+
 
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">新增資料</h5>
 
-                    <form method="post" novalidate onsubmit="checkForm(); return false;">
+                    <form name="form1" novalidate onsubmit="checkForm(); return false;">
                         <div class="form-group">
                             <label for="name">** name</label>
                             <input type="text" class="form-control" id="name" name="name" required>
@@ -71,11 +71,13 @@ $pageName = 'ab-insert';
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <script>
     // document.querySelector('#name').style.borderColor = 'red'
+    const info = document.querySelector('#info');
     const name = document.querySelector('#name');
     const email = document.querySelector('#email');
     const email_re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
     function checkForm() {
+        info.style.display = 'none';
         let isPass = true;
 
         name.style.borderColor = '#CCCCCC';
@@ -90,24 +92,34 @@ $pageName = 'ab-insert';
             small.innerText = "請輸入正確的名字！";
             small.style.display = 'block';
         }
-        if (!email_re.test(email.value)) {
-            isPass = false;
-            email.style.borderColor = 'red';
-            let small = email.closest('.form-group').querySelector('small');
-            small.innerText = "請輸入正確的 email ！";
-            small.style.display = 'block';
-        }
+        // if (!email_re.test(email.value)) {
+        //     isPass = false;
+        //     email.style.borderColor = 'red';
+        //     let small = email.closest('.form-group').querySelector('small');
+        //     small.innerText = "請輸入正確的 email ！";
+        //     small.style.display = 'block';
+        // }
 
         if (isPass) {
-            const fd = new FormData(document.forms[0]);
+            const fd = new FormData(document.form1);
 
             fetch('ab-insert-api.php', {
                     method: 'POST',
                     body: fd
                 })
-                .then(r => r.json)
+                .then(r => r.json())
                 .then(obj => {
                     console.log(obj);
+                    if (obj.success) {
+                        info.classList.remove('alert-danger');
+                        info.classList.add('alert-success');
+                        info.innerHTML = '新增成功';
+                    } else {
+                        info.classList.remove('alert-success');
+                        info.classList.add('alert-danger');
+                        info.innerHTML = '新增失敗';
+                    }
+                    info.style.display = 'block';
                 })
         }
     }
