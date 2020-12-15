@@ -111,7 +111,7 @@ $row2 = $stmt->fetchAll();
                     <td><?= $item['email'] ?></td>
                     <td><?= $item['mobile'] ?></td>
                     <td><?= $item['birthday'] ?></td>
-                    <td><?= htmlentities($r['address']) ?></td>
+                    <td><?= htmlentities($item['address']) ?></td>
                     <td>
                         <a href="ab-edit.php?sid=<?= $item['sid'] ?>">
                             <i class="fas fa-edit"></i>

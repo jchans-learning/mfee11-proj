@@ -7,7 +7,7 @@ $output = [
     'error' => '參數不足',
 ];
 
-if (!isset($_POST['name']) or !isset($_POST['email'])) {
+if (!isset($_POST['sid']) or !isset($_POST['name']) or !isset($_POST['email'])) {
     echo json_encode($output, JSON_UNESCAPED_UNICODE);
     exit;
 }
@@ -25,12 +25,13 @@ if (!preg_match($email_re, $_POST['email'])) {
 }
 
 
-$sql = "INSERT INTO `address_book`(
-`name`, `email`, `mobile`, `birthday`, `address`, `created_at`
-) VALUES (
-    ?, ?, ?, ?, ?, NOW()
-)
-";
+$sql = "UPDATE `address_book` SET 
+`name`=?,
+`email`=?,
+`mobile`=?,
+`birthday`=?,
+`address`=? 
+WHERE `sid`=?";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
@@ -39,12 +40,15 @@ $stmt->execute([
     $_POST['mobile'],
     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
     $_POST['address'],
+    $_POST['sid'],
 ]);
 
 $output['rowCount'] = $stmt->rowCount();
 if ($stmt->rowCount()) {
     $output['success'] = True;
     unset($output['error']);
+} else {
+    $output['error'] = '資料沒有修改';
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);

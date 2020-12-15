@@ -42,8 +42,8 @@ $pageName = 'ab-edit';
                 <div class="card-body">
                     <h5 class="card-title">編輯資料</h5>
 
-                    <!-- <form name="form1" novalidate onsubmit="checkForm(); return false;"> -->
-                    <form name="form1" method="post">
+                    <form name="form1" novalidate onsubmit="checkForm(); return false;">
+                        <!-- <form name="form1" method="post"> -->
                         <input type="hidden" name="sid" value="<?= $sid ?>">
                         <div class="form-group">
                             <label for="name">** name</label>
@@ -73,9 +73,9 @@ $pageName = 'ab-edit';
 
                         <div class="form-group">
                             <label for="address">address</label>
-                            <textarea class="form-control" name="address" id="address" cols="30" rows="3"></textarea>
+                            <textarea class="form-control" name="address" id="address" cols="30" rows="3"><?= htmlentities($row['address']) ?></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">更新</button>
+                        <button type="submit" class="btn btn-primary">修改</button>
                     </form>
 
                 </div>
@@ -129,11 +129,11 @@ $pageName = 'ab-edit';
                     if (obj.success) {
                         info.classList.remove('alert-danger');
                         info.classList.add('alert-success');
-                        info.innerHTML = '新增成功';
+                        info.innerHTML = '修改成功';
                     } else {
                         info.classList.remove('alert-success');
                         info.classList.add('alert-danger');
-                        info.innerHTML = '新增失敗';
+                        info.innerHTML = '修改失敗';
                     }
                     info.style.display = 'block';
                 })
