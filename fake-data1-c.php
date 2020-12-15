@@ -1,6 +1,6 @@
 <?php
 mb_internal_encoding("UTF-8");
-require __DIR__ . '/db-connect.php';
+require __DIR__ . '/db_connect.php';
 
 $str = "統一獅隊陳鏞基昨晚對富邦悍將隊完成生涯百盜";
 
