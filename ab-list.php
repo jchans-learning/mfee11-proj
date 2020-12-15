@@ -101,7 +101,7 @@ $row2 = $stmt->fetchAll();
             <?php foreach ($row2 as $item) : ?>
                 <tr>
                     <td class="remove-icon">
-                        <a href="ab-delete.php?sid=<?= $item['sid'] ?>">
+                        <a href="ab-delete.php?sid=<?= $item['sid'] ?>" onclick="del_it(event)">
                             <i class="fas fa-minus-circle"></i>
                         </a>
                     </td>
@@ -120,9 +120,17 @@ $row2 = $stmt->fetchAll();
 </div>
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <script>
-    function removeItem(event) {
-        const t = event.target;
-        t.closest('tr').remove();
+    // function removeItem(event) {
+    //     const t = event.target;
+    //     t.closest('tr').remove();
+    // }
+
+    function del_it() {
+        if (!confirm('是否要刪除資料')) {
+            event.preventDefault(); // 避免預設的行為
+        }
+        // 練習：把提示訊息套 Bootstrap 的 Modal 模板
+        // https://getbootstrap.com/docs/4.0/components/modal/
     }
 </script>
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
