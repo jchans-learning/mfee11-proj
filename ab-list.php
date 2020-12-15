@@ -1,5 +1,12 @@
 <?php
 require __DIR__ . '/db_connect.php';
+
+if (!isset($_SESSION['admin'])) {
+    include __DIR__ . '/ab-list-noadmin.php';
+    exit;
+}
+
+
 $pageName = 'ab-list';
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 

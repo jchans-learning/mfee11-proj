@@ -74,14 +74,12 @@ $row2 = $stmt->fetchAll();
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
-                <th><i class="fas fa-minus-circle"></i></th>
                 <th scope="col">sid</th>
                 <th scope="col">name</th>
                 <th scope="col">email</th>
                 <th scope="col">mobile</th>
                 <th scope="col">birthday</th>
                 <th scope="col">address</th>
-                <th scope="col"><i class="fas fa-edit"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -101,22 +99,12 @@ $row2 = $stmt->fetchAll();
 
             <?php foreach ($row2 as $item) : ?>
                 <tr>
-                    <td class="remove-icon">
-                        <a href="javascript: del_it(<?= $item['sid'] ?>)">
-                            <i class="fas fa-minus-circle"></i>
-                        </a>
-                    </td>
                     <td><?= $item['sid'] ?></td>
                     <td><?= $item['name'] ?></td>
                     <td><?= $item['email'] ?></td>
                     <td><?= $item['mobile'] ?></td>
                     <td><?= $item['birthday'] ?></td>
                     <td><?= htmlentities($item['address']) ?></td>
-                    <td>
-                        <a href="ab-edit.php?sid=<?= $item['sid'] ?>">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                    </td>
                 </tr>
             <?php endforeach; ?>
 
