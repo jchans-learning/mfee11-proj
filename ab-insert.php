@@ -1,7 +1,5 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
+require __DIR__ . '/is_admin.php';
 
 $pageName = 'ab-insert';
 ?>
