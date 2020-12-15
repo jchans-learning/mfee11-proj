@@ -81,6 +81,7 @@ $row2 = $stmt->fetchAll();
                 <th scope="col">mobile</th>
                 <th scope="col">birthday</th>
                 <th scope="col">address</th>
+                <th scope="col"><i class="fas fa-edit"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -101,7 +102,7 @@ $row2 = $stmt->fetchAll();
             <?php foreach ($row2 as $item) : ?>
                 <tr>
                     <td class="remove-icon">
-                        <a href="ab-delete.php?sid=<?= $item['sid'] ?>" onclick="del_it(event)">
+                        <a href="javascript: del_it(<?= $item['sid'] ?>)">
                             <i class="fas fa-minus-circle"></i>
                         </a>
                     </td>
@@ -111,6 +112,11 @@ $row2 = $stmt->fetchAll();
                     <td><?= $item['mobile'] ?></td>
                     <td><?= $item['birthday'] ?></td>
                     <td><?= htmlentities($r['address']) ?></td>
+                    <td>
+                        <a href="ab-edit.php?sid=<?= $item['sid'] ?>">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
 
@@ -125,9 +131,9 @@ $row2 = $stmt->fetchAll();
     //     t.closest('tr').remove();
     // }
 
-    function del_it() {
-        if (!confirm('是否要刪除資料')) {
-            event.preventDefault(); // 避免預設的行為
+    function del_it(sid) {
+        if (confirm(`是否要刪除資料 ${sid}`)) {
+            location.href = 'ab-delete.php?sid=' + sid;
         }
         // 練習：把提示訊息套 Bootstrap 的 Modal 模板
         // https://getbootstrap.com/docs/4.0/components/modal/
