@@ -9,16 +9,34 @@ if (!isset($_SESSION['admin'])) {
 
 $pageName = 'ab-list';
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$search = isset($_GET['search']) ? $_GET['search'] : '';
+$params = [];
+
+$where = ' WHERE 1 ';
+if (!empty($search)) {
+    $where .= sprintf(" AND `name` LIKE %s ", $pdo->quote('%' . $search . '%'));
+    $params['search'] = $search;
+}
 
 $perPage = 5;
-$t_sql = "SELECT COUNT(1) FROM address_book";
+$t_sql = "SELECT COUNT(1) FROM address_book $where";
 $totalRows = $pdo->query($t_sql)->fetch()['COUNT(1)'];
 $totalPages = ceil($totalRows / $perPage);
 
-if ($page < 1) $page = 1;
 if ($page > $totalPages) $page = $totalPages;
+if ($page < 1) $page = 1;
 
-$p_sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
+$p_sql = sprintf(
+    "SELECT * FROM address_book %s 
+    ORDER BY sid DESC LIMIT %s, %s",
+    $where,
+    ($page - 1) * $perPage,
+    $perPage
+);
+
+echo '<!--';
+echo $p_sql;
+echo '-->';
 
 $stmt = $pdo->query($p_sql);
 // $row = $stmt->fetch();
@@ -41,12 +59,18 @@ $row2 = $stmt->fetchAll();
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=1">
+                        <a class="page-link" href="?<?php
+                                                    $params['page'] = 1;
+                                                    echo http_build_query($params)
+                                                    ?>">
                             <i class="fas fa-arrow-alt-circle-left"></i>
                         </a>
                     </li>
                     <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $page - 1 ?>">
+                        <a class="page-link" href="?<?php
+                                                    $params['page'] = $page - 1;
+                                                    echo http_build_query($params)
+                                                    ?>">
                             <i class="far fa-arrow-alt-circle-left"></i>
                         </a>
                     </li>
@@ -55,7 +79,10 @@ $row2 = $stmt->fetchAll();
                         if ($i >= 1 and $i <= $totalPages) :
                     ?>
                             <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                                <a class="page-link" href="?page=<?= $i ?>">
+                                <a class="page-link" href="?<?php
+                                                            $params['page'] = $i;
+                                                            echo http_build_query($params)
+                                                            ?>">
                                     <?= $i ?>
                                 </a>
                             </li>
@@ -64,12 +91,18 @@ $row2 = $stmt->fetchAll();
                     endfor ?>
 
                     <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $page + 1 ?>">
+                        <a class="page-link" href="?<?php
+                                                    $params['page'] = $page + 1;
+                                                    echo http_build_query($params)
+                                                    ?>">
                             <i class="far fa-arrow-alt-circle-right"></i>
                         </a>
                     </li>
                     <li class="page-item <?= $page  == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $totalPages ?>">
+                        <a class="page-link" href="?<?php
+                                                    $params['page'] = $totalPages;
+                                                    echo http_build_query($params)
+                                                    ?>">
                             <i class="fas fa-arrow-alt-circle-right"></i>
                         </a>
                     </li>
@@ -78,7 +111,7 @@ $row2 = $stmt->fetchAll();
         </div>
         <div class="col d-flex flex-row-reverse bd-highlight">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
