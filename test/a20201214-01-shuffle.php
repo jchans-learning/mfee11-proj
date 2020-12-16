@@ -8,6 +8,9 @@ echo '<br>';
 
 $str = "統一獅隊陳鏞基昨晚對富邦悍將隊完成生涯百盜";
 
+// 參考
+// https://www.php.net/manual/en/function.preg-split.php
+
 function str_shuffle_unicode($str)
 {
     $tmp = preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY);
