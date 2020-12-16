@@ -35,6 +35,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
             history.pushState(obj, '', url)
         }
 
+        window.onpopstate = function (event) {
+            console.log(event.state);
+        }
+
     </script>
 </body>
 
