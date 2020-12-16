@@ -16,11 +16,24 @@ https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
 
     <div id="info"></div>
 
+    <input type="text" name="" id="kk" placeholder="key">
+    <input type="text" name="" id="vv" placeholder="value">
+    <button id="button" onclick="myPushState()">Push It!</button>
 
     <script>
 
+        const kk = document.querySelector('#kk');
+        const vv = document.querySelector('#vv');
 
+        function myPushState() {
+            let obj = {};
+            obj[kk.value] = vv.value;
 
+            const url = new URL(window.location);
+            url.searchParams.set(kk.value, vv.value);
+
+            history.pushState(obj, '', url)
+        }
 
     </script>
 </body>
