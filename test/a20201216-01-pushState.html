@@ -10,10 +10,6 @@
 </head>
 
 <body>
-    <!--
-https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
--->
-
     <div id="info"></div>
 
     <input type="text" name="" id="kk" placeholder="key">
@@ -21,7 +17,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
     <button id="button" onclick="myPushState()">Push It!</button>
 
     <script>
-
+        // 參考：
+        // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
         const kk = document.querySelector('#kk');
         const vv = document.querySelector('#vv');
 
@@ -35,6 +32,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
             history.pushState(obj, '', url)
         }
 
+        // 參考：
+        // https://developer.mozilla.org/zh-TW/docs/Web/API/Window.onpopstate
         window.onpopstate = function (event) {
             console.log(event.state);
         }
