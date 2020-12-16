@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<!-- 確認 cookie 是否存在 -->
 <?= $_COOKIE['mycookie'] ?? '沒有 mycookie' ?>
 </body>
 </html>
