@@ -5,6 +5,10 @@ if (!isset($_SESSION)){
 if (!isset($_SESSION['n'])){
     $_SESSION['n'] = 0;
 }
+
+// 參考
+// https://www.php.net/manual/en/reserved.variables.session.php
+
 ?>
 
 <!doctype html>
