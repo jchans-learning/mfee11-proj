@@ -6,44 +6,56 @@
 </head>
 <body>
 
-<input type="file" name="" id="file_field" multiple accept="image/*">
-<button onclick="checkField()">check</button><br>
-<img src="" height="200" alt="Image preview..."><br>
-<br>
+<!--<input type="file" name="" id="file_field2" multiple accept="image/*">-->
+<!--<button onclick="checkField()">check</button><br>-->
+<!--<img src="" height="200" alt="Image preview..."><br>-->
+<!--<br>-->
+
 <!-- in class example -->
 <img src="" alt="" id="preview"
-     onclick="file_field2.click()"
+     onclick="file_field.click()"
      style="width: 300px; height: 300px; background-color: #ccc;">
 
-<input type="file" name="" id="file_field2" accept="image/*" onchange="fileChange()" style="display: none">
+<input type="file" id="file_field" accept="image/*" onchange="fileChange()" style="display: none">
 
 <script>
-    function previewFile() {
-        const preview = document.querySelector('img');
-        const file = document.querySelector('input[type=file]').files[0];
-        const reader = new FileReader();
-
-        reader.addEventListener("load", function () {
-            // convert image file to base64 string
-            preview.src = reader.result;
-        }, false);
-
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
-
-    function checkField() {
-        console.log(file_field.files);
-        console.log(file_field.files.length);
-        previewFile()
-    }
+    // function previewFile() {
+    //     const preview = document.querySelector('img');
+    //     const file = document.querySelector('input[type=file]').files[0];
+    //     const reader = new FileReader();
+    //
+    //     reader.addEventListener("load", function () {
+    //         // convert image file to base64 string
+    //         preview.src = reader.result;
+    //     }, false);
+    //
+    //     if (file) {
+    //         reader.readAsDataURL(file);
+    //     }
+    // }
+    //
+    // function checkField() {
+    //     console.log(file_field2.files);
+    //     console.log(file_field2.files.length);
+    //     previewFile()
+    // }
 
     <!-- in class example -->
+    const file_field = document.querySelector('#file_filed');
+    const preview = document.querySelector('#preview');
+    const reader = new FileReader();
+
+    reader.addEventListener('load', function (event){
+        preview.src = reader.result;
+        preview.style.height = 'auto';
+    })
+
     function fileChange() {
-        console.log(file_field2.files.length);
-        console.log(file_field2.files[0]);
-        console.log(file_field2.files);
+        reader.readAsDataURL(file_field.files[0])
+
+        console.log(file_field.files.length);
+        console.log(file_field.files[0]);
+        console.log(file_field.files);
     }
 
 </script>
