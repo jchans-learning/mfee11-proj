@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- MIME types 參考：
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+
+選擇檔案時有安全機制，不會讓 Server 知道檔案的路徑，所以目前 JS 抓不到這個檔案（待確認）
+-->
+
+<input type="file" name="" id="file_field" multiple accept="image/*">
+<button onclick="checkField()">check</button>
+
+<script>
+    function checkField() {
+        console.log(file_field.files);
+        console.log(file_field.files.length);
+
+    }
+</script>
+</body>
+</html>
