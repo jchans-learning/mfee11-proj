@@ -6,42 +6,42 @@
 </head>
 <body>
 
-<!--<input type="file" name="" id="file_field2" multiple accept="image/*">-->
-<!--<button onclick="checkField()">check</button><br>-->
-<!--<img src="" height="200" alt="Image preview..."><br>-->
-<!--<br>-->
+<input type="file" name="" id="file_field" multiple accept="image/*">
+<button onclick="checkField()">check</button><br>
+<img src="" height="200" alt="Image preview..."><br>
+<br>
 
 <!-- in class example -->
 <img src="" alt="" id="preview"
-     onclick="file_field.click()"
+     onclick="file_field2.click()"
      style="width: 300px; height: 300px; background-color: #ccc;">
 
-<input type="file" id="file_field" accept="image/*" onchange="fileChange()" style="display: none">
+<input type="file" id="file_field2" accept="image/*" onchange="fileChange()" style="display: none">
 
 <script>
-    // function previewFile() {
-    //     const preview = document.querySelector('img');
-    //     const file = document.querySelector('input[type=file]').files[0];
-    //     const reader = new FileReader();
-    //
-    //     reader.addEventListener("load", function () {
-    //         // convert image file to base64 string
-    //         preview.src = reader.result;
-    //     }, false);
-    //
-    //     if (file) {
-    //         reader.readAsDataURL(file);
-    //     }
-    // }
-    //
-    // function checkField() {
-    //     console.log(file_field2.files);
-    //     console.log(file_field2.files.length);
-    //     previewFile()
-    // }
+    function previewFile() {
+        const preview = document.querySelector('img');
+        const file = document.querySelector('input[type=file]').files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            // convert image file to base64 string
+            preview.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function checkField() {
+        console.log(file_field.files);
+        console.log(file_field.files.length);
+        previewFile()
+    }
 
     <!-- in class example -->
-    const file_field = document.querySelector('#file_field');
+    const file_field2 = document.querySelector('#file_field2');
     const preview = document.querySelector('#preview');
     const reader = new FileReader();
 
@@ -51,11 +51,11 @@
     })
 
     function fileChange() {
-        reader.readAsDataURL(file_field.files[0])
+        reader.readAsDataURL(file_field2.files[0])
 
-        console.log(file_field.files.length);
-        console.log(file_field.files[0]);
-        console.log(file_field.files);
+        console.log(file_field2.files.length);
+        console.log(file_field2.files[0]);
+        console.log(file_field2.files);
     }
 
 </script>
@@ -63,7 +63,7 @@
 </html>
 
 <!--
-這個 type="file" 選擇檔案時有安全機制，不會讓 Server 知道檔案的路徑，所以目前 JS 抓不到這個檔案（待確認）
+這個 type="file" 選擇檔案時有安全機制，不會讓 Server 知道檔案的路徑（？），所以目前 JS 抓不到這個檔案（待確認）
 
 因為圖片還沒有上傳，所以有些變數在編輯器裡會有沒有值的情形
 
