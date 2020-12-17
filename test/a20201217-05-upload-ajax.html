@@ -1,10 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
+
+<form action="" name="form1" onsubmit="doAjax(); return false;">
+    <input type="file" name="avatar" id="" accept="image/*">
+    <input type="submit" name="" id="">
+</form>
+
+<img src="" alt="" style="width: 300px;">
+
+<script>
+    function doAjax() {
+        const fd = new FormData(document.form1);
+
+        fetch('a20201217-03-upload-test.php', {
+            method: 'POST',
+            body: fd
+        })
+        .then(r=>r.json())
+        .then(obj=>{
+            console.log(obj);
+            document.querySelector('img').src = '../uploads/' + obj.filename;
+        })
+    }
+</script>
 
 </body>
 </html>
