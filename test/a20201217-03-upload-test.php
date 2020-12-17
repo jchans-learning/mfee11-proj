@@ -54,7 +54,7 @@ echo json_encode($output, JSON_UNESCAPED_UNICODE);
 // 還沒做前端，先用 POSTMAN 測試上傳檔案功能。
 // avatar, file, filename 都是我們自己設定的變數名稱或 key
 //
-// 要搬動檔案只有 move_uploaded_file() 可以用
+// PHP 要搬動檔案只有 move_uploaded_file() 可以用
 // 參考資料： https://www.php.net/manual/en/function.move-uploaded-file.php
 //
 // uniqid()
