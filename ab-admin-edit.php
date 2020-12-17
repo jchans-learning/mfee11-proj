@@ -29,7 +29,7 @@ $pageName = 'ab-insert';
                     <h5 class="card-title">編輯管理者資料</h5>
 
 
-                    <img src="" alt="" id="preview" onclick="avatar.click()" style="width: 300px; height: 300px; background-color: #ccc;">
+                    <img alt="" id="preview" onclick="avatar.click()" src="./uploads/<?= $_SESSION['admin']['avatar'] ?>" style="width: 300px; height: 300px; background-color: #ccc;">
 
 
                     <form name="form1" novalidate onsubmit="checkForm(); return false;">
