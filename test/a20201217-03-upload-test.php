@@ -48,6 +48,9 @@ header('Content-Type: application/json');
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
 
 // 筆記
+// $_Files 是 PHP 的 HTTP 檔案上傳變數
+// 參考資料：https://www.php.net/manual/en/reserved.variables.files.php
+//
 //
 // 還沒做前端，先用 POSTMAN 測試上傳檔案功能
 //
