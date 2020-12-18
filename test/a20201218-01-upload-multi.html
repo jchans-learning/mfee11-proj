@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form1" onsubmit="doUpload(); return false;">
+        <input type="file" name="photos[]" id="" multiple>
+        <input type="submit" name="" id="">
+    </form>
+
+    <div id="imgs"></div>
+
+    <script>
+        function doUpload() {
+            const fd = new FormData(document.form1);
+
+            fetch('a20201217-06-upload-multi.php', {
+                method: 'POST',
+                body: fd,
+            })
+                .then(r => r.text())
+                .then(txt => {
+                    imgs.innerHTML = txt;
+                })
+        }
+
+    </script>
+</body>
+
+</html>
