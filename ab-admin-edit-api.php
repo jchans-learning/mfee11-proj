@@ -55,3 +55,28 @@ if ($stmt->rowCount() == 1) {
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
 exit;
+
+
+// 筆記
+//
+// PDO::quote, 也就是 quote()
+// https://www.php.net/manual/en/pdo.quote.php
+//
+// implode()
+// https://www.php.net/manual/en/function.implode.php
+//
+// PDO::prepare
+// https://www.php.net/manual/en/pdo.prepare.php
+//
+// PDOStatement::execute
+// https://www.php.net/manual/en/pdostatement.execute.php
+//
+// PDOStatement::rowCount
+// https://www.php.net/manual/en/pdostatement.rowcount.php
+//
+// PDO::query
+// https://www.php.net/manual/en/pdo.query.php
+//
+// json_encode()
+// https://www.php.net/manual/en/function.json-encode.php
+
