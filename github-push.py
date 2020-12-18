@@ -1,5 +1,6 @@
 import os
 
+os.system('git pull')
 os.system('git status')
 os.system('git add .')
 commitMessage = input('commit message> ')
