@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .card {
+            display: inline-block;
+            margin: 10px;
+            width: 200px;
+        }
+
+        .card>img {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,10 +23,21 @@
         <input type="file" name="photos[]" id="" multiple>
         <input type="submit" name="" id="">
     </form>
+    <div id="imgs">
 
-    <div id="imgs"></div>
+    </div>
+
 
     <script>
+        const imgs = document.querySelector('#imgs');
+        const cardTpl = a => {
+            return `
+            <div class="card" data-name="${a.fname}">
+                <img src="./../uploads/${a.fname}" alt="${a.fname}">
+            </div>
+            `;
+        };
+
         function doUpload() {
             const fd = new FormData(document.form1);
 
@@ -23,9 +45,16 @@
                 method: 'POST',
                 body: fd,
             })
-                .then(r => r.text())
-                .then(txt => {
-                    imgs.innerHTML = txt;
+                .then(r => r.jsdon())
+                .then(obj => {
+                    console.log(obj);
+                    if (obj.files) {
+                        let str = '';
+                        obj.files.forEach(function (el)){
+                            str += cardTpl({ fname: el });
+                        }
+                        imgs.innerHTML += str;
+                    }
                 })
         }
 

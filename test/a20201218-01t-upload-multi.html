@@ -7,6 +7,17 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .card {
+            display: inline-block;
+            margin: 10px;
+            width: 200px;
+        }
+
+        .card>img {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,11 +26,21 @@
         <input type="submit">
     </form>
     <div id="imgs">
-
+        <!--    <div class="card" data-name="">-->
+        <!--        <img src="./../uploads/5fdc4083ac892.jpg" alt="">-->
+        <!--    </div>-->
     </div>
 
 
     <script>
+        const imgs = document.querySelector('#imgs');
+        const cardTpl = a => {
+            return `
+        <div class="card" data-name="${a.fname}">
+            <img src="./../uploads/${a.fname}" alt="${a.fname}">
+        </div>
+        `;
+        };
 
 
         function doUpload() {
@@ -29,9 +50,16 @@
                 method: 'POST',
                 body: fd,
             })
-                .then(r => r.text())
-                .then(txt => {
-                    imgs.innerHTML = txt;
+                .then(r => r.json())
+                .then(obj => {
+                    console.log(obj);
+                    if (obj.files) {
+                        let str = '';
+                        obj.files.forEach(function (el) {
+                            str += cardTpl({ fname: el });
+                        })
+                        imgs.innerHTML += str;
+                    }
                 })
         }
 
