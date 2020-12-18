@@ -138,3 +138,8 @@ $pageName = 'ab-insert';
     }
 </script>
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
+
+// 筆記
+//
+// fetch()
+// https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch
