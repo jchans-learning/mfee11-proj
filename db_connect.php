@@ -10,7 +10,7 @@ $pdo_options = [
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
 ];
 
-// 這行用 PDO 連結資料庫
+// 這行用 PDO 連結資料庫，指定為變數 $pdo ，讓其他 php 檔 include 後可以用
 $pdo = new PDO($dsn, $db_user, $db_pass, $pdo_options);
 
 if (!isset($_SESSION)) {
