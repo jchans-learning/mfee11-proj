@@ -8,3 +8,5 @@ db_key.php
 vendor
 composer.lock
 
+# 忽略資料夾裡的檔案（常會是測試圖檔）
+uploads/*
